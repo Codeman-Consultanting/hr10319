@@ -38,25 +38,40 @@
   --dots:rgba(255,194,61,.08);
 }
 *{box-sizing:border-box}
-body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;padding:0 16px}
-.wrap{max-width:1140px;margin:0 auto;padding-block:20px 48px;display:flex;flex-direction:column;gap:32px}
+[hidden]{display:none!important}
+html{scroll-padding-top:70px}
+body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.55;padding:0 16px}
+.wrap{max-width:1100px;margin:0 auto;padding-block:20px 48px;display:flex;flex-direction:column;gap:26px}
 a{color:var(--blue);text-underline-offset:2px;text-decoration-thickness:1px}
 a:hover{text-decoration-thickness:2px}
-a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
 .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
 
 /* ---------- Masthead ---------- */
-.strip{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 16px;background:var(--band);color:var(--band-ink);border-bottom:5px solid var(--gold);font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px}
+.strip{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 16px;background:var(--band);color:var(--band-ink);font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px}
 .masthead{position:relative;background:var(--paper);border:2px solid var(--band);border-top:0;overflow:hidden}
 .masthead::after{content:"";position:absolute;inset:0 0 0 55%;background-image:radial-gradient(var(--dots) 1.6px,transparent 1.7px);background-size:9px 9px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 70%);mask-image:linear-gradient(90deg,transparent,#000 70%);pointer-events:none}
-.mast-body{position:relative;z-index:1;padding:22px 24px 22px;display:flex;flex-direction:column;gap:12px}
+.mast-body{position:relative;z-index:1;padding:20px 24px;display:flex;flex-direction:column;gap:10px}
 .bill-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 26px}
-h1{font-family:var(--display);font-weight:900;font-size:clamp(68px,13vw,148px);line-height:.82;letter-spacing:-.01em;text-transform:uppercase}
-.short{font-family:var(--display);font-weight:800;font-size:clamp(22px,3.4vw,34px);line-height:1.02;text-transform:uppercase;color:var(--band);letter-spacing:.01em;max-width:24ch}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(64px,12vw,140px);line-height:.82;letter-spacing:-.01em;text-transform:uppercase}
+.short{font-family:var(--display);font-weight:800;font-size:clamp(22px,3.2vw,32px);line-height:1.02;text-transform:uppercase;color:var(--band);letter-spacing:.01em;max-width:26ch}
 .meta{display:flex;flex-wrap:wrap;gap:4px 22px;font-size:13.5px;color:var(--muted)}
 .meta b{color:var(--ink);font-weight:600}
-.official{margin:0;font-size:13px;color:var(--muted);max-width:78ch}
+body.compact h1{font-size:clamp(40px,6vw,60px)}
+body.compact .short{font-size:clamp(17px,2.2vw,22px)}
+body.compact .meta{display:none}
+body.compact .mast-body{padding:14px 20px;gap:6px}
+body.compact .stamp.big{font-size:clamp(15px,2vw,20px)}
+
+/* Nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--band);border-bottom:5px solid var(--gold);overflow-x:auto}
+.nav ol{list-style:none;margin:0;padding:0 6px;display:flex;min-width:max-content}
+.nav a{display:flex;align-items:baseline;gap:7px;padding:11px 14px 9px;color:var(--band-ink);text-decoration:none;font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;border-bottom:4px solid transparent;margin-bottom:-5px}
+.nav a .num{font-family:var(--mono);font-size:11px;font-weight:500;opacity:.7}
+.nav a:hover{background:rgba(255,255,255,.08)}
+.nav a[aria-current="page"]{background:var(--gold);color:var(--gold-ink);border-bottom-color:var(--gold)}
 
 /* Stamp */
 .stamp{display:inline-block;font-family:var(--stencil);font-weight:800;text-transform:uppercase;letter-spacing:.06em;line-height:1;color:var(--band);border:3px solid currentColor;outline:1.5px solid currentColor;outline-offset:3px;padding:7px 12px 6px;transform:rotate(-3deg);white-space:nowrap}
@@ -66,9 +81,56 @@ h1{font-family:var(--display);font-weight:900;font-size:clamp(68px,13vw,148px);l
 .stamp.solid{background:var(--gold);color:var(--gold-ink);border-color:var(--gold);outline-color:var(--gold)}
 .stamp.alert{color:var(--alert)}
 
-/* ---------- Stage track ---------- */
+/* Pages */
+.page{display:flex;flex-direction:column;gap:28px}
+.page-intro{display:flex;flex-direction:column;gap:6px;max-width:74ch}
+.page-intro h2{font-family:var(--display);font-weight:900;font-size:clamp(34px,5vw,48px);line-height:.95;text-transform:uppercase}
+.page-intro p{font-size:16.5px;color:var(--muted)}
+.pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:4px solid var(--band);padding-top:14px}
+.pager a{font-family:var(--display);font-weight:800;font-size:19px;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;color:var(--band)}
+.pager a:hover{text-decoration:underline}
+.pager .spacer{flex:1}
+
+/* Overview */
+.plain{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;background:var(--paper);border:2px solid var(--rule)}
+.plain div{padding:18px 20px;border-bottom:2px solid var(--hair);display:flex;flex-direction:column;gap:6px}
+.plain div:nth-child(odd){border-right:2px solid var(--hair)}
+.plain div:nth-last-child(-n+2){border-bottom:0}
+.plain h3{font-family:var(--display);font-weight:900;font-size:22px;text-transform:uppercase;letter-spacing:.02em;color:var(--band)}
+.plain p{font-size:16.5px;line-height:1.5}
+@media (max-width:700px){.plain{grid-template-columns:1fr}.plain div:nth-child(odd){border-right:0}.plain div:nth-last-child(2){border-bottom:2px solid var(--hair)}}
+.now{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;background:var(--gold-soft);border:2px solid var(--gold-text);padding:14px 18px;font-size:16px;font-weight:600}
+.now .label{font-family:var(--display);font-weight:900;font-size:20px;text-transform:uppercase;letter-spacing:.04em}
+.watch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:800px){.watch{grid-template-columns:1fr}}
+.watch a{display:flex;flex-direction:column;gap:8px;background:var(--paper);border:2px solid var(--rule);padding:16px 18px;text-decoration:none;color:var(--ink)}
+.watch a:hover{border-color:var(--band);box-shadow:5px 5px 0 var(--gold)}
+.watch .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.watch h3{font-family:var(--display);font-weight:900;font-size:24px;line-height:1;text-transform:uppercase}
+.watch p{font-size:15px}
+.watch .go{margin-top:auto;font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.05em;text-transform:uppercase;color:var(--band)}
+
+/* Big numbers */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:6px solid var(--band);border-bottom:2px solid var(--rule)}
+.stat{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;border-left:2px solid var(--rule)}
+.stat:first-child{border-left:0;padding-left:2px}
+.stat .n{font-family:var(--display);font-weight:900;font-size:60px;line-height:.9;font-variant-numeric:tabular-nums}
+.stat .l{font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);max-width:28ch}
+.stat.urgent .n{color:var(--alert)}
+.stat.urgent .l{color:var(--ink)}
+@media (max-width:600px){.stats{grid-template-columns:1fr}.stat{border-left:0;padding-left:2px;border-top:2px solid var(--hair);flex-direction:row;align-items:center;gap:14px}.stat:first-child{border-top:0}.stat .n{font-size:46px;min-width:72px}}
+
+/* Section heads */
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:6px 14px;flex-wrap:wrap;border-bottom:4px solid var(--band);box-shadow:0 3px 0 var(--gold);padding-bottom:6px}
+.head h2{font-family:var(--display);font-weight:900;font-size:28px;line-height:1;text-transform:uppercase;letter-spacing:.01em}
+.head .note{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.block{display:flex;flex-direction:column;gap:14px;min-width:0}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:860px){.grid2{grid-template-columns:1fr}}
+
+/* Stage track */
 .track{background:var(--paper);border:2px solid var(--rule);overflow-x:auto}
-.stages{display:grid;grid-template-columns:repeat(7,minmax(112px,1fr));list-style:none;margin:0;padding:16px 12px 14px}
+.stages{display:grid;grid-template-columns:repeat(7,minmax(108px,1fr));list-style:none;margin:0;padding:16px 12px 14px}
 .stage{display:flex;flex-direction:column;gap:5px;padding:0 6px;font-size:12.5px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
 .stage::before{content:"";height:10px;background:repeating-linear-gradient(135deg,var(--hair) 0 6px,transparent 6px 12px);border:1.5px solid var(--hair)}
 .stage.done::before{background:var(--band);border-color:var(--band)}
@@ -76,28 +138,9 @@ h1{font-family:var(--display);font-weight:900;font-size:clamp(68px,13vw,148px);l
 .stage.current::before{background:var(--gold);border-color:var(--band)}
 .stage small{font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted)}
 
-/* ---------- Big numbers ---------- */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:6px solid var(--band);border-bottom:2px solid var(--rule)}
-.stat{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;border-left:2px solid var(--rule)}
-.stat:first-child{border-left:0;padding-left:2px}
-.stat .n{font-family:var(--display);font-weight:900;font-size:64px;line-height:.9;font-variant-numeric:tabular-nums}
-.stat .l{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);max-width:26ch}
-.stat.urgent .n{color:var(--alert)}
-.stat.urgent .l{color:var(--ink)}
-@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:0;padding-left:2px}.stat:nth-child(n+3){border-top:2px solid var(--rule)}}
-
-/* ---------- Sections ---------- */
-.head{display:flex;justify-content:space-between;align-items:flex-end;gap:6px 14px;flex-wrap:wrap;border-bottom:4px solid var(--band);box-shadow:0 3px 0 var(--gold);padding-bottom:6px}
-.head h2{font-family:var(--display);font-weight:900;font-size:30px;line-height:1;text-transform:uppercase;letter-spacing:.01em}
-.head .note{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.head p{margin:0;flex-basis:100%;color:var(--muted);font-size:14px;max-width:78ch}
-.block{display:flex;flex-direction:column;gap:14px;min-width:0}
-.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
-@media (max-width:860px){.grid2{grid-template-columns:1fr}}
-
-/* Lists */
+/* Rows */
 .rows{list-style:none;margin:0;padding:0}
-.rows li{display:grid;grid-template-columns:86px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--hair);font-size:14px;align-items:baseline}
+.rows li{display:grid;grid-template-columns:86px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--hair);font-size:14.5px;align-items:baseline}
 .rows li:last-child{border-bottom:0}
 .rows .d{font-family:var(--mono);font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
 .dates li{grid-template-columns:86px 1fr 78px}
@@ -107,9 +150,13 @@ h1{font-family:var(--display);font-weight:900;font-size:clamp(68px,13vw,148px);l
 .dates .past{opacity:.5}
 .dates .past .cd{font-family:var(--sans);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
 @media (max-width:480px){.rows li,.dates li{grid-template-columns:78px 1fr}.dates .cd{grid-column:2;text-align:left}}
-.srcs{font-size:12.5px;display:flex;flex-wrap:wrap;gap:4px 14px}
+.srcs{font-size:13px;display:flex;flex-wrap:wrap;gap:4px 14px}
+.facts{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;font-size:14.5px;background:var(--paper);border:2px solid var(--rule);padding:14px 18px;margin:0}
+.facts dt{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:0}
+@media (max-width:520px){.facts{grid-template-columns:1fr}.facts dd{margin-bottom:6px}}
 
-/* Basis tags */
+/* Tags */
 .tag{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:1px 5px;white-space:nowrap;vertical-align:1px;margin-left:2px}
 .tag.confirmed{background:var(--ink);color:var(--paper);border:1px solid var(--ink)}
 .tag.reported{color:var(--ink);border:1px solid var(--ink)}
@@ -118,41 +165,50 @@ h1{font-family:var(--display);font-weight:900;font-size:clamp(68px,13vw,148px);l
 /* Triggers */
 .triggers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
 @media (max-width:760px){.triggers{grid-template-columns:1fr}}
-.triggers li{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--hair);font-size:14.5px;font-weight:600}
+.triggers li{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--hair);font-size:15px;font-weight:600}
 .box{width:20px;height:20px;border:2.5px solid var(--ink);margin-top:2px;display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:16px;line-height:1;color:var(--gold-ink)}
 .box.hit{background:var(--gold);border-color:var(--ink)}
-.triggers .why{display:block;font-weight:400;color:var(--muted);font-size:13px}
+.triggers .why{display:block;font-weight:400;color:var(--muted);font-size:13.5px}
 
 /* Lanes */
-.lanes{display:flex;flex-direction:column;gap:22px}
+.lanes{display:flex;flex-direction:column;gap:24px}
 .lane{background:var(--paper);border:2px solid var(--rule)}
 .lane-top{display:flex;justify-content:space-between;align-items:center;gap:10px 16px;flex-wrap:wrap;padding:12px 18px;border-bottom:2px solid var(--rule)}
-.lane.crit .lane-top{background:var(--gold);color:var(--gold-ink);border-bottom-color:var(--rule)}
+.lane.crit .lane-top{background:var(--gold);color:var(--gold-ink)}
 .lane.warn .lane-top{background:var(--band);color:var(--band-ink)}
 .lane h3{font-family:var(--display);font-weight:900;font-size:26px;line-height:1;text-transform:uppercase;letter-spacing:.01em}
 .lane .ids{font-family:var(--mono);font-size:11.5px;margin-top:4px;opacity:.8}
 .lane.crit .stamp,.lane.warn .stamp{color:inherit}
-.lane-body{padding:16px 18px 14px;display:flex;flex-direction:column;gap:14px}
-.latest{margin:0;font-size:15.5px;font-weight:500;max-width:82ch}
-.lane-cols{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:26px}
+.lane-body{padding:16px 18px;display:flex;flex-direction:column;gap:16px}
+.latest{font-size:16px;font-weight:500;max-width:80ch}
+.lane-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
 @media (max-width:760px){.lane-cols{grid-template-columns:1fr}}
-.sub{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 4px;display:flex;gap:6px;align-items:center}
-.next{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.sub{font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 6px}
+.next{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14.5px}
 .next li{display:grid;grid-template-columns:14px 1fr;gap:6px}
 .next li::before{content:"";width:8px;height:8px;background:var(--gold);outline:1.5px solid var(--band);margin-top:7px}
-.relevance{margin:0;font-size:14px;background:var(--gold-soft);padding:10px 12px;border:1px dashed var(--gold-text)}
+.connects{font-size:14.5px;background:var(--gold-soft);padding:10px 12px;border-left:0;border:1px solid var(--gold-text)}
+details.more{border-top:1px solid var(--hair);padding-top:10px}
+details.more summary{cursor:pointer;font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.05em;text-transform:uppercase;color:var(--band);list-style:none;display:inline-flex;gap:8px;align-items:center}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::before{content:"+";font-family:var(--mono);font-size:16px;width:18px;height:18px;display:grid;place-items:center;border:2px solid currentColor;line-height:1}
+details.more[open] summary::before{content:"−"}
+details.more .inner{display:flex;flex-direction:column;gap:12px;padding-top:10px}
 
 /* Table */
 .table-scroll{overflow-x:auto;background:var(--paper);border:2px solid var(--rule)}
-table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14.5px}
 th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--hair);vertical-align:top}
 tr:last-child td{border-bottom:0}
 th{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.06em;text-transform:uppercase;border-bottom:3px solid var(--band)}
 td:first-child{font-weight:700;white-space:nowrap}
 td.none{color:var(--muted)}
-
-.qs{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:14.5px}
+.qs{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:15px}
 .qs li::marker{font-family:var(--display);font-weight:900;color:var(--band)}
+.srcgroups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px}
+@media (max-width:700px){.srcgroups{grid-template-columns:1fr}}
+.srcgroups h3{font-family:var(--display);font-weight:800;font-size:17px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.srcgroups ul{margin:0;padding-left:18px;font-size:14px;display:flex;flex-direction:column;gap:3px}
 
 footer{background:var(--band);color:var(--band-ink);border-top:5px solid var(--gold);padding:16px 18px;display:flex;flex-direction:column;gap:10px;font-size:12.5px}
 footer .legend{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center}
@@ -165,168 +221,7 @@ footer .tag.read{color:var(--gold);border-color:var(--gold)}
 <body>
 
 <script type="application/json" id="tracker-data">
-{
-  "lastVerified": "2026-09-15",
-  "congressEnds": "2027-01-03",
-  "bill": {
-    "number": "H.R. 10319",
-    "shortTitle": "Gender Delusion Disqualification Act",
-    "officialTitle": "To amend title 5, United States Code, to provide for requirements sensitive Government positions relating to gender dysphoria, and for other purposes.",
-    "congress": "119th Congress",
-    "sponsor": "Rep. Nancy Mace (R-SC-1)",
-    "introduced": "2026-09-08",
-    "committee": "House Oversight and Government Reform",
-    "cosponsors": [],
-    "senateCompanion": null,
-    "currentStage": 1,
-    "congressGovUpdated": "2026-09-14",
-    "posture": {"level": "warn", "label": "Monitor — no movement"},
-    "actions": [
-      {"date": "2026-09-08", "text": "Introduced in House by Rep. Mace.", "basis": "confirmed"},
-      {"date": "2026-09-08", "text": "Referred to the House Committee on Oversight and Government Reform.", "basis": "confirmed"},
-      {"date": "2026-09-08", "text": "Sponsor press release issued; frames bill around “sensitive federal positions.” No cosponsors or Senate companion named.", "basis": "confirmed"}
-    ],
-    "sources": [
-      {"label": "Congress.gov", "url": "https://www.congress.gov/bill/119th-congress/house-bill/10319"},
-      {"label": "GovInfo bill status XML", "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr10319.xml"},
-      {"label": "Bill text (IH)", "url": "https://www.govinfo.gov/app/details/BILLS-119hr10319ih"},
-      {"label": "Mace press release", "url": "https://mace.house.gov/media/press-releases/rep-nancy-mace-introduces-bill-keep-gender-delusion-out-sensitive-federal"}
-    ]
-  },
-  "stages": [
-    {"name": "Introduced", "date": "2026-09-08"},
-    {"name": "In committee", "date": "2026-09-08"},
-    {"name": "Hearing / markup", "date": null},
-    {"name": "Passed House", "date": null},
-    {"name": "Passed Senate", "date": null},
-    {"name": "To President", "date": null},
-    {"name": "Law", "date": null}
-  ],
-  "keyDates": [
-    {"date": "2026-09-28", "text": "EEOC federal-sector EEO rule — public comments due (Docket EEOC-2026-0067)", "basis": "confirmed"},
-    {"date": "2026-09-30", "text": "FY2026 ends — watch any stopgap or appropriations text for riders on federal fitness standards", "basis": "read"},
-    {"date": "2026-11-03", "text": "General election — House control for the 120th Congress decided", "basis": "confirmed"},
-    {"date": "2026-11-15", "approx": "Nov 2026", "text": "Shilling v. United States trial scheduled (W.D. Wash.)", "basis": "reported"},
-    {"date": "2027-01-03", "text": "119th Congress ends — H.R. 10319 expires unless enacted; would need reintroduction", "basis": "confirmed"},
-    {"date": "2027-01-04", "text": "Talbott v. United States trial set to begin (D.D.C.)", "basis": "reported"}
-  ],
-  "triggers": [
-    {"text": "First cosponsor added", "why": "Signals caucus support beyond the sponsor.", "hit": false},
-    {"text": "Senate companion introduced", "why": "Required for any path to enactment.", "hit": false},
-    {"text": "Hearing or markup noticed by House Oversight", "why": "Most bills never reach this step; if it does, the comment/testimony window opens.", "hit": false},
-    {"text": "Text attached to NDAA, appropriations, or another must-pass bill", "why": "The realistic fast path in a short end-of-Congress window.", "hit": false},
-    {"text": "An agency adopts a similar diagnosis-based bar by policy or rule", "why": "Same outcome without legislation.", "hit": false},
-    {"text": "Bill reintroduced in the 120th Congress (after Jan. 3, 2027)", "why": "Resets the clock with a new bill number.", "hit": false}
-  ],
-  "lanes": [
-    {
-      "id": "eeoc-rule",
-      "title": "EEOC federal-sector EEO process rule",
-      "ids": "RIN 3046-AB46 · Docket EEOC-2026-0067 · 29 CFR Part 1614",
-      "level": "crit",
-      "status": "Comment window open",
-      "latest": "Proposed rule published Aug. 28, 2026 after a 2–1 Commission vote on Aug. 26. It would end mandatory pre-complaint counseling, make administrative judge hearings discretionary, and bar administrative class complaints. Comments close Sept. 28.",
-      "timeline": [
-        {"date": "2026-01-22", "text": "EEOC votes to rescind 2024 harassment enforcement guidance.", "basis": "reported"},
-        {"date": "2026-02-26", "text": "EEOC overturns Lusardi v. McHugh restroom-access precedent for federal employees.", "basis": "reported"},
-        {"date": "2026-07-28", "text": "AFGE and two federal employees sue EEOC over an internal freeze on processing federal-sector class complaints.", "basis": "confirmed"},
-        {"date": "2026-08-26", "text": "Commission votes 2–1 to advance the proposed rule.", "basis": "confirmed"},
-        {"date": "2026-08-28", "text": "Proposed rule published in the Federal Register; 30-day comment period.", "basis": "confirmed"}
-      ],
-      "next": ["AFGE / WFP comment filed by Sept. 28", "Comment volume and allied filings on the docket", "Final rule and effective date", "Ruling in AFGE's class-complaint freeze suit"],
-      "relevance": "If a diagnosis-based disqualification is applied, this rule governs how an affected employee would challenge it — and removes the class-complaint route for a pattern affecting many employees at once.",
-      "sources": [
-        {"label": "Federal Register", "url": "https://www.federalregister.gov/documents/2026/08/28/2026-17641/federal-sector-equal-employment-opportunity"},
-        {"label": "Comment on Regulations.gov", "url": "https://www.regulations.gov/commenton/EEOC-2026-0067-0002"},
-        {"label": "AFGE on proposed rule", "url": "https://www.afge.org/article/proposed-overhaul-of-federal-eeo-process-is-bad-for-workers-and-public"},
-        {"label": "AFGE v. EEOC suit", "url": "https://www.afge.org/publication/afge-and-federal-employees-sue-eeoc-to-reverse-freeze-of-federalsector-class-claims/"},
-        {"label": "Lusardi reversal (Bloomberg Law)", "url": "https://news.bloomberglaw.com/daily-labor-report/eeoc-overturns-bathroom-ruling-for-transgender-federal-workers"},
-        {"label": "Guidance rescission (Duane Morris)", "url": "https://www.duanemorris.com/alerts/eeoc_votes_rescind_workplace_harassment_guidance_0126.html"}
-      ]
-    },
-    {
-      "id": "military-ban",
-      "title": "Military gender-dysphoria service ban litigation",
-      "ids": "EO 14183 (Jan. 27, 2025) · Talbott v. United States · Shilling v. United States",
-      "level": "warn",
-      "status": "Supreme Court petition pending",
-      "latest": "DOJ petitioned the Supreme Court on Aug. 28, 2026 to review Talbott before trial, after a divided D.C. Circuit panel in June kept currently serving transgender troops protected from discharge. The ban on new accessions remains in effect.",
-      "timeline": [
-        {"date": "2025-03-18", "text": "Talbott: Judge Ana Reyes (D.D.C.) issues nationwide preliminary injunction.", "basis": "confirmed"},
-        {"date": "2025-05-06", "text": "Shilling: Supreme Court stays that injunction, allowing the ban to take effect while litigation continues.", "basis": "confirmed"},
-        {"date": "2025-10-20", "text": "Shilling: Ninth Circuit hears oral argument; decision pending.", "basis": "confirmed"},
-        {"date": "2026-06-01", "text": "Talbott: divided D.C. Circuit panel blocks discharge of currently serving plaintiffs; allows restrictions on new recruits.", "basis": "reported"},
-        {"date": "2026-06-30", "text": "Talbott: district court certifies a class of transgender service members (reported July 2).", "basis": "confirmed"},
-        {"date": "2026-08-28", "text": "Talbott: DOJ files Supreme Court petition seeking review before trial.", "basis": "reported"}
-      ],
-      "next": ["Supreme Court action on the Talbott petition", "Ninth Circuit decision in Shilling", "Shilling trial (Nov. 2026) and Talbott trial (Jan. 4, 2027)"],
-      "relevance": "Same mechanism as H.R. 10319 — a diagnosis, not individual performance, as the disqualifier. Courts' findings on animus and equal protection here are the closest precedent for any civilian challenge.",
-      "sources": [
-        {"label": "GLAD Law — Talbott", "url": "https://www.gladlaw.org/cases/talbott-v-usa/"},
-        {"label": "Lambda Legal — Shilling", "url": "https://lambdalegal.org/case/shilling-v-trump/"},
-        {"label": "Stars and Stripes (Aug. 28)", "url": "https://www.stripes.com/theaters/us/2026-08-28/trump-supreme-court-transgender-troops-22686847.html"},
-        {"label": "The Advocate", "url": "https://www.advocate.com/politics/national/talbott-trans-military-supreme-court"},
-        {"label": "Military Times (class cert.)", "url": "https://www.militarytimes.com/news/your-military/2026/07/02/transgender-troops-granted-class-action-lawsuit-against-government/"}
-      ]
-    },
-    {
-      "id": "schedule-pc",
-      "title": "Schedule Policy/Career (formerly Schedule F)",
-      "ids": "OPM final rule (Feb. 6, 2026) · EO of June 3, 2026",
-      "level": "warn",
-      "status": "In effect; litigation ongoing",
-      "latest": "OPM finalized the rule Feb. 6, 2026, and a June 3 executive order moved positions into the new schedule. AFGE is a plaintiff in challenges; district-court injunctions have been stayed on appeal, so the policy remains in effect.",
-      "timeline": [
-        {"date": "2025-01-20", "text": "Schedule F revived by executive order; AFGE/AFSCME and NTEU file suits.", "basis": "reported"},
-        {"date": "2026-02-06", "text": "OPM publishes Schedule Policy/Career final rule.", "basis": "reported"},
-        {"date": "2026-03-05", "approx": "Early Mar. 2026", "text": "Coalition suit (PEER, AFGE, AFSCME, AFL-CIO; Democracy Forward) challenges the order and final rule.", "basis": "reported"},
-        {"date": "2026-06-03", "text": "EO “Implementing Schedule Policy/Career in the Excepted Service” moves positions into the schedule.", "basis": "reported"}
-      ],
-      "next": ["Appellate merits ruling in any challenge", "Further agency position conversions", "Whether covered safety/security positions are reclassified"],
-      "relevance": "Reclassified employees lose adverse-action appeal rights — the process that would otherwise slow removal of a current employee under a diagnosis-based bar. Estimates of positions affected vary by source (about 8,000 under the June order; up to 50,000 overall).",
-      "sources": [
-        {"label": "CRS Legal Sidebar LSB11412", "url": "https://www.congress.gov/crs-product/LSB11412"},
-        {"label": "Federal News Network (Mar.)", "url": "https://federalnewsnetwork.com/litigation/2026/03/lawsuit-contends-schedule-policy-career-exceeds-presidential-authority/"},
-        {"label": "FedSmith (June 3 order)", "url": "https://www.fedsmith.com/2026/06/03/what-the-new-schedule-policy-career-order-means-for-federal-employees/"},
-        {"label": "AFGE lawsuit summary", "url": "https://www.afge.org/article/summary-of-afge-lawsuits-against-trump--how-litigation-works-2/"}
-      ]
-    },
-    {
-      "id": "related",
-      "title": "Related bills and executive orders",
-      "ids": "EO 14168 · EO 14183 · 119th Congress bills",
-      "level": "quiet",
-      "status": "No new related bill found",
-      "latest": "Congress.gov lists no related bills for H.R. 10319. No other 119th Congress bill applying a diagnosis-based bar to civilian federal positions was found in the Sept. 15 search.",
-      "timeline": [
-        {"date": "2025-01-20", "text": "EO 14168 (“Defending Women from Gender Ideology Extremism…”) — basis EEOC cited for restricting facility access.", "basis": "confirmed"},
-        {"date": "2025-01-27", "text": "EO 14183 (“Prioritizing Military Excellence and Readiness”) — military service ban.", "basis": "confirmed"}
-      ],
-      "next": ["New bills touching federal fitness-for-duty, medical-record access, or security-clearance standards", "Riders in FY2027 appropriations or NDAA conference text", "OPM or agency guidance on medical standards for covered positions"],
-      "relevance": "Watches for the same policy arriving by another vehicle, or narrower bills that make H.R. 10319's approach easier to implement.",
-      "sources": [
-        {"label": "Congress.gov search", "url": "https://www.congress.gov/search"}
-      ]
-    }
-  ],
-  "voices": [
-    {"org": "AFGE", "bill": "No statement located", "eeoc": "Opposes; says cases will take longer at greater cost", "lit": "Plaintiff: EEOC class-freeze suit; Schedule P/C suits"},
-    {"org": "NTEU", "bill": "No statement located", "eeoc": "Not yet checked", "lit": "Plaintiff: Schedule F / P/C suit"},
-    {"org": "NFFE / NAGE", "bill": "No statement located", "eeoc": "Not yet checked", "lit": "—"},
-    {"org": "GLAD Law / NCLR", "bill": "No statement located", "eeoc": "Not yet checked", "lit": "Counsel: Talbott v. United States"},
-    {"org": "Lambda Legal / HRC", "bill": "No statement located", "eeoc": "Not yet checked", "lit": "Counsel: Shilling v. United States"}
-  ],
-  "openQuestions": [
-    "What triggers agency knowledge of a diagnosis, and does that inquiry comply with Rehabilitation Act limits?",
-    "For a current employee: removal, reassignment, or something else — and what appeal rights apply?",
-    "Is there any path to show the diagnosis doesn't affect job performance, or is it a strict bar?",
-    "Which positions and certifications government-wide already carry a mental-health standard, and at how many agencies?",
-    "Would AFGE have a formal consultation role in the 180-day agency rulemaking?"
-  ],
-  "changeLog": [
-    {"date": "2026-09-15", "text": "Tracker created. Baseline verified against Congress.gov (data updated Sept. 14), Federal Register, and case counsel pages. No bill movement since referral."}
-  ]
-}
+
 </script>
 
 <div class="wrap">
@@ -340,65 +235,110 @@ footer .tag.read{color:var(--gold);border-color:var(--gold)}
         </div>
         <div class="short" id="bill-short"></div>
         <div class="meta" id="bill-meta"></div>
-        <p class="official" id="bill-official"></p>
       </div>
     </header>
+    <nav class="nav" aria-label="Tracker pages">
+      <ol id="nav"></ol>
+    </nav>
   </div>
 
-  <div class="track" role="region" aria-label="Legislative stage">
-    <ol class="stages" id="stages"></ol>
-  </div>
-
-  <div class="stats" id="stats"></div>
-
-  <div class="grid2">
-    <section class="block">
-      <div class="head"><h2>Key dates</h2><span class="note">Countdown from today</span></div>
-      <ul class="rows dates" id="dates"></ul>
-    </section>
-    <section class="block">
-      <div class="head"><h2>Bill action log</h2><span id="posture"></span></div>
-      <ul class="rows" id="actions"></ul>
-      <div class="srcs" id="bill-sources"></div>
-    </section>
-  </div>
-
-  <section class="block">
-    <div class="head"><h2>Escalation triggers</h2><span class="note">Any checked box changes WFP posture</span></div>
-    <ul class="triggers" id="triggers"></ul>
-  </section>
-
-  <section class="block" aria-labelledby="lanes-h">
-    <div class="head"><h2 id="lanes-h">Related fights</h2><p>Developments outside the bill that shape how a diagnosis-based bar would be applied or challenged.</p></div>
-    <div class="lanes" id="lanes"></div>
-  </section>
-
-  <section class="block">
-    <div class="head"><h2>Who's on record</h2><span class="note">Unions and legal allies</span></div>
-    <div class="table-scroll">
-      <table>
-        <thead><tr><th>Organization</th><th>On H.R. 10319</th><th>On EEOC rule</th><th>Litigation role</th></tr></thead>
-        <tbody id="voices"></tbody>
-      </table>
+  <!-- 1 OVERVIEW -->
+  <section class="page" id="overview" data-title="Overview">
+    <div class="page-intro">
+      <h2>The bill at a glance</h2>
+      <p>What H.R. 10319 would do, where it stands, and the three things to watch right now.</p>
+    </div>
+    <div class="plain" id="plain"></div>
+    <div class="stats" id="stats"></div>
+    <div class="now"><span class="label">Right now</span><span id="posture-note"></span><span id="posture"></span></div>
+    <div class="block">
+      <div class="head"><h2>Top 3 to watch</h2><span class="note">Tap a card for details</span></div>
+      <div class="watch" id="watch"></div>
     </div>
   </section>
 
-  <div class="grid2">
-    <section class="block">
+  <!-- 2 THE BILL -->
+  <section class="page" id="bill" data-title="The Bill" hidden>
+    <div class="page-intro">
+      <h2>The bill</h2>
+      <p>Where H.R. 10319 is in Congress, what has happened so far, and what would signal it is moving.</p>
+    </div>
+    <div class="track" role="region" aria-label="Legislative stage"><ol class="stages" id="stages"></ol></div>
+    <div class="grid2">
+      <div class="block">
+        <div class="head"><h2>Key dates</h2><span class="note">Countdown from today</span></div>
+        <ul class="rows dates" id="dates"></ul>
+      </div>
+      <div class="block">
+        <div class="head"><h2>What's happened</h2></div>
+        <ul class="rows" id="actions"></ul>
+      </div>
+    </div>
+    <div class="block">
+      <div class="head"><h2>Signs it's moving</h2><span class="note">A checked box means it happened</span></div>
+      <ul class="triggers" id="triggers"></ul>
+    </div>
+    <div class="block">
+      <div class="head"><h2>Bill facts</h2></div>
+      <dl class="facts" id="facts"></dl>
+    </div>
+    <div class="lanes" data-lanes="bill"></div>
+  </section>
+
+  <!-- 3 EEOC & WORKFORCE -->
+  <section class="page" id="workforce" data-title="EEOC &amp; Workforce" hidden>
+    <div class="page-intro">
+      <h2>EEOC &amp; the federal workforce</h2>
+      <p>Changes to how federal employees file discrimination complaints and to civil-service protections.</p>
+    </div>
+    <div class="lanes" data-lanes="workforce"></div>
+  </section>
+
+  <!-- 4 COURTS -->
+  <section class="page" id="courts" data-title="Courts" hidden>
+    <div class="page-intro">
+      <h2>In the courts</h2>
+      <p>Lawsuits over the military's gender dysphoria service ban, which uses the same approach as H.R. 10319.</p>
+    </div>
+    <div class="lanes" data-lanes="courts"></div>
+  </section>
+
+  <!-- 5 ALLIES & SOURCES -->
+  <section class="page" id="sources" data-title="Allies &amp; Sources" hidden>
+    <div class="page-intro">
+      <h2>Allies &amp; sources</h2>
+      <p>Who has spoken up, open questions for counsel, every source used, and what changed on this site.</p>
+    </div>
+    <div class="block">
+      <div class="head"><h2>Who's on record</h2><span class="note">Unions and legal allies</span></div>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Organization</th><th>On H.R. 10319</th><th>On EEOC rule</th><th>Litigation role</th></tr></thead>
+          <tbody id="voices"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="block">
       <div class="head"><h2>Open questions for counsel</h2></div>
       <ol class="qs" id="questions"></ol>
-    </section>
-    <section class="block">
+    </div>
+    <div class="block">
+      <div class="head"><h2>Sources</h2></div>
+      <div class="srcgroups" id="srcgroups"></div>
+    </div>
+    <div class="block">
       <div class="head"><h2>Change log</h2></div>
       <ul class="rows" id="changes"></ul>
-    </section>
-  </div>
+    </div>
+  </section>
+
+  <div class="pager" id="pager"></div>
 
   <footer>
     <div class="legend">
       <span><span class="tag confirmed">Confirmed</span> primary source (Congress.gov, Federal Register, court or counsel)</span>
       <span><span class="tag reported">Reported</span> news or secondary source</span>
-      <span><span class="tag read">Read</span> interpretation or watch item, not a fact</span>
+      <span><span class="tag read">Watch item</span> something to monitor, not an event</span>
     </div>
     <div>Legislative snapshot for internal WFP use — not legal advice and not an official AFGE position. Updated Mondays and Fridays; verify dates against the linked sources before external use.</div>
   </footer>
@@ -406,62 +346,76 @@ footer .tag.read{color:var(--gold);border-color:var(--gold)}
 
 <script>
 (function(){
-  var D = JSON.parse(document.getElementById('tracker-data').textContent);
+function run(D){
   var MS = 86400000;
   function parse(s){var p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
   function today(){var n=new Date();return new Date(n.getFullYear(),n.getMonth(),n.getDate());}
   function fmt(s){return parse(s).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}
   function fmtShort(s){var d=parse(s);return d.toLocaleDateString('en-US',{month:'short',day:'numeric'})+" ’"+String(d.getFullYear()).slice(2);}
   function days(s){return Math.round((parse(s)-today())/MS);}
-  function esc(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML;}
-  function tag(b){var map={confirmed:'Confirmed',reported:'Reported',read:'Read'};return b?' <span class="tag '+b+'">'+map[b]+'</span>':'';}
-  function src(list){return list.map(function(s){return '<a href="'+s.url+'" target="_blank" rel="noopener">'+esc(s.label)+'</a>';}).join('');}
+  function esc(t){var d=document.createElement('div');d.textContent=t==null?'':t;return d.innerHTML;}
+  function tag(b){var map={confirmed:'Confirmed',reported:'Reported',read:'Watch item'};return b?' <span class="tag '+b+'">'+map[b]+'</span>':'';}
+  function links(list){return (list||[]).map(function(s){return '<a href="'+s.url+'" target="_blank" rel="noopener">'+esc(s.label)+'</a>';}).join('');}
   function stampClass(level){return level==='crit'?'stamp sm alert':(level==='quiet'?'stamp sm ink':'stamp sm');}
-  var B = D.bill;
+  function $(id){return document.getElementById(id);}
+  var B = D.bill, O = D.overview || {plain:[],watchTop:[]};
+  var PAGES = [].slice.call(document.querySelectorAll('.page'));
 
-  document.getElementById('strip-date').textContent = 'Last verified ' + fmt(D.lastVerified);
-  document.getElementById('bill-number').textContent = B.number;
-  document.getElementById('stage-stamp').textContent = D.stages[B.currentStage].name;
-  document.getElementById('bill-short').textContent = '“'+B.shortTitle+'”';
-  document.getElementById('bill-official').textContent = 'Official title: '+B.officialTitle;
-  document.getElementById('bill-meta').innerHTML =
+  /* Masthead */
+  $('strip-date').textContent = 'Last verified ' + fmt(D.lastVerified);
+  $('bill-number').textContent = B.number;
+  $('stage-stamp').textContent = D.stages[B.currentStage].name;
+  $('bill-short').textContent = '“'+B.shortTitle+'”';
+  $('bill-meta').innerHTML =
     '<span>Sponsor <b>'+esc(B.sponsor)+'</b></span>'+
     '<span>Committee <b>'+esc(B.committee)+'</b></span>'+
-    '<span>Introduced <b class="mono">'+fmt(B.introduced)+'</b></span>'+
-    '<span>'+esc(B.congress)+'</span>';
+    '<span>Introduced <b class="mono">'+fmt(B.introduced)+'</b></span>';
 
-  document.getElementById('stages').innerHTML = D.stages.map(function(s,i){
+  /* Nav */
+  $('nav').innerHTML = PAGES.map(function(p,i){
+    return '<li><a href="#'+p.id+'" data-page="'+p.id+'"><span class="num">0'+(i+1)+'</span>'+p.getAttribute('data-title')+'</a></li>';
+  }).join('');
+
+  /* 1 Overview */
+  $('plain').innerHTML = O.plain.map(function(x){return '<div><h3>'+esc(x.label)+'</h3><p>'+esc(x.text)+'</p></div>';}).join('');
+  var upcoming = D.keyDates.filter(function(k){return days(k.date)>=0;});
+  var next = upcoming[0];
+  $('stats').innerHTML =
+    (next?'<div class="stat'+(days(next.date)<=14?' urgent':'')+'"><span class="n">'+days(next.date)+'</span><span class="l">Days to next deadline: '+esc(next.text.split(' — ')[0])+'</span></div>':'<div class="stat"><span class="n">—</span><span class="l">No upcoming deadlines</span></div>')+
+    '<div class="stat"><span class="n">'+B.cosponsors.length+'</span><span class="l">Cosponsors · '+(B.senateCompanion?'Senate version filed':'no Senate version')+'</span></div>'+
+    '<div class="stat"><span class="n">'+Math.max(days(D.congressEnds),0)+'</span><span class="l">Days until this Congress ends and the bill expires</span></div>';
+  $('posture-note').textContent = B.postureNote || '';
+  $('posture').innerHTML = '<span class="'+stampClass(B.posture.level)+'">'+esc(B.posture.label)+'</span>';
+  var titles = {}; PAGES.forEach(function(p){titles[p.id]=p.getAttribute('data-title').replace('&amp;','&');});
+  $('watch').innerHTML = O.watchTop.map(function(w,i){
+    return '<a href="#'+w.page+'"><span class="k">Watch 0'+(i+1)+'</span><h3>'+esc(w.title)+'</h3><p>'+esc(w.text)+'</p><span class="go">'+esc(titles[w.page]||'Details')+' →</span></a>';
+  }).join('');
+
+  /* 2 Bill */
+  $('stages').innerHTML = D.stages.map(function(s,i){
     var cls = i<B.currentStage?'done':(i===B.currentStage?'current':'');
     return '<li class="stage '+cls+'"'+(i===B.currentStage?' aria-current="step"':'')+'>'+esc(s.name)+'<small>'+(s.date?fmtShort(s.date):'—')+'</small></li>';
   }).join('');
-
-  var upcoming = D.keyDates.filter(function(k){return days(k.date)>=0;});
-  var next = upcoming[0];
-  var sinceIntro = -days(B.introduced);
-  var left = days(D.congressEnds);
-  document.getElementById('stats').innerHTML =
-    '<div class="stat"><span class="n">'+B.cosponsors.length+'</span><span class="l">Cosponsors · '+(B.senateCompanion?'Senate companion filed':'no Senate companion')+'</span></div>'+
-    '<div class="stat"><span class="n">'+sinceIntro+'</span><span class="l">Days since introduction</span></div>'+
-    '<div class="stat"><span class="n">'+Math.max(left,0)+'</span><span class="l">Days until the 119th Congress ends</span></div>'+
-    (next?'<div class="stat'+(days(next.date)<=14?' urgent':'')+'"><span class="n">'+days(next.date)+'</span><span class="l">Days to '+esc(next.text.split(' — ')[0])+'</span></div>':'<div class="stat"><span class="n">—</span><span class="l">No upcoming dates</span></div>');
-
-  document.getElementById('dates').innerHTML = D.keyDates.map(function(k){
+  $('dates').innerHTML = D.keyDates.map(function(k){
     var n = days(k.date), past = n<0;
     var cd = past?'Passed':(n===0?'Today':(k.approx?'~':'')+n+'<small>days</small>');
     return '<li class="'+(past?'past':'')+'"><span class="d">'+(k.approx?esc(k.approx):fmtShort(k.date))+'</span><span>'+esc(k.text)+tag(k.basis)+'</span><span class="cd'+(!past&&n<=14?' soon':'')+'">'+cd+'</span></li>';
   }).join('');
-
-  document.getElementById('posture').innerHTML = '<span class="'+stampClass(B.posture.level)+'">'+esc(B.posture.label)+'</span>';
-  document.getElementById('actions').innerHTML = B.actions.slice().reverse().map(function(a){
+  $('actions').innerHTML = B.actions.slice().reverse().map(function(a){
     return '<li><span class="d">'+fmtShort(a.date)+'</span><span>'+esc(a.text)+tag(a.basis)+'</span></li>';
   }).join('') + '<li><span class="d">'+fmtShort(D.lastVerified)+'</span><span style="color:var(--muted)">Checked — Congress.gov data last updated '+fmt(B.congressGovUpdated)+'.</span></li>';
-  document.getElementById('bill-sources').innerHTML = src(B.sources);
-
-  document.getElementById('triggers').innerHTML = D.triggers.map(function(t){
-    return '<li><span class="box'+(t.hit?' hit':'')+'" role="img" aria-label="'+(t.hit?'Triggered':'Not triggered')+'">'+(t.hit?'✕':'')+'</span><span>'+esc(t.text)+'<span class="why">'+esc(t.why)+'</span></span></li>';
+  $('triggers').innerHTML = D.triggers.map(function(t){
+    return '<li><span class="box'+(t.hit?' hit':'')+'" role="img" aria-label="'+(t.hit?'Happened':'Not yet')+'">'+(t.hit?'✕':'')+'</span><span>'+esc(t.text)+'<span class="why">'+esc(t.why)+'</span></span></li>';
   }).join('');
+  $('facts').innerHTML =
+    '<dt>Official title</dt><dd>'+esc(B.officialTitle)+'</dd>'+
+    '<dt>Sponsor</dt><dd>'+esc(B.sponsor)+'</dd>'+
+    '<dt>Committee</dt><dd>'+esc(B.committee)+'</dd>'+
+    '<dt>Introduced</dt><dd>'+fmt(B.introduced)+' · '+esc(B.congress)+'</dd>'+
+    '<dt>Read it</dt><dd class="srcs">'+links(B.sources)+'</dd>';
 
-  document.getElementById('lanes').innerHTML = D.lanes.map(function(L){
+  /* Lanes (pages 2–4) */
+  function laneHTML(L){
     var tl = L.timeline.slice().reverse().map(function(e){
       return '<li><span class="d">'+(e.approx?esc(e.approx):fmtShort(e.date))+'</span><span>'+esc(e.text)+tag(e.basis)+'</span></li>';
     }).join('');
@@ -469,23 +423,62 @@ footer .tag.read{color:var(--gold);border-color:var(--gold)}
     return '<article class="lane '+L.level+'" id="'+L.id+'">'+
       '<div class="lane-top"><div><h3>'+esc(L.title)+'</h3><div class="ids">'+esc(L.ids)+'</div></div><span class="'+st+'">'+esc(L.status)+'</span></div>'+
       '<div class="lane-body">'+
-      '<p class="latest">'+esc(L.latest)+'</p>'+
-      '<div class="lane-cols"><div><p class="sub">Timeline</p><ul class="rows">'+tl+'</ul></div>'+
-      '<div style="display:flex;flex-direction:column;gap:16px"><div><p class="sub">Watch next</p><ul class="next">'+L.next.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul></div>'+
-      '<div><p class="sub">Why it matters <span class="tag read">Read</span></p><p class="relevance">'+esc(L.relevance)+'</p></div></div></div>'+
-      '<div class="srcs">'+src(L.sources)+'</div>'+
+        '<p class="latest">'+esc(L.latest)+'</p>'+
+        '<div class="lane-cols">'+
+          '<div><p class="sub">What’s next</p><ul class="next">'+L.next.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul></div>'+
+          '<div><p class="sub">How it connects to H.R. 10319</p><p class="connects">'+esc(L.relevance)+'</p></div>'+
+        '</div>'+
+        '<details class="more"><summary>Full timeline &amp; sources ('+L.timeline.length+')</summary><div class="inner"><ul class="rows">'+tl+'</ul><div class="srcs">'+links(L.sources)+'</div></div></details>'+
       '</div></article>';
-  }).join('');
+  }
+  [].slice.call(document.querySelectorAll('[data-lanes]')).forEach(function(box){
+    var page = box.getAttribute('data-lanes');
+    box.innerHTML = D.lanes.filter(function(L){return (L.page||'workforce')===page;}).map(laneHTML).join('');
+    if(!box.innerHTML) box.hidden = true;
+  });
 
-  document.getElementById('voices').innerHTML = D.voices.map(function(v){
+  /* 5 Allies & sources */
+  $('voices').innerHTML = D.voices.map(function(v){
     function cell(t){var none=/^(No statement located|Not yet checked|—)$/.test(t);return '<td'+(none?' class="none"':'')+'>'+esc(t)+'</td>';}
     return '<tr><td>'+esc(v.org)+'</td>'+cell(v.bill)+cell(v.eeoc)+cell(v.lit)+'</tr>';
   }).join('');
-
-  document.getElementById('questions').innerHTML = D.openQuestions.map(function(q){return '<li>'+esc(q)+'</li>';}).join('');
-  document.getElementById('changes').innerHTML = D.changeLog.slice().reverse().map(function(c){
+  $('questions').innerHTML = D.openQuestions.map(function(q){return '<li>'+esc(q)+'</li>';}).join('');
+  $('srcgroups').innerHTML = [{title:'The bill',sources:B.sources}].concat(D.lanes.map(function(L){return {title:L.title,sources:L.sources};})).map(function(g){
+    return '<div><h3>'+esc(g.title)+'</h3><ul>'+(g.sources||[]).map(function(s){return '<li><a href="'+s.url+'" target="_blank" rel="noopener">'+esc(s.label)+'</a></li>';}).join('')+'</ul></div>';
+  }).join('');
+  $('changes').innerHTML = D.changeLog.slice().reverse().map(function(c){
     return '<li><span class="d">'+fmtShort(c.date)+'</span><span>'+esc(c.text)+'</span></li>';
   }).join('');
+
+  /* Routing */
+  var ids = PAGES.map(function(p){return p.id;});
+  function show(scroll){
+    var h = (location.hash||'').slice(1), target = h, laneEl = null;
+    if(ids.indexOf(h)<0){
+      laneEl = h ? document.getElementById(h) : null;
+      var parent = laneEl && laneEl.closest ? laneEl.closest('.page') : null;
+      target = parent ? parent.id : 'overview';
+    }
+    PAGES.forEach(function(p){ p.hidden = p.id!==target; });
+    document.body.classList.toggle('compact', target!=='overview');
+    [].slice.call(document.querySelectorAll('#nav a')).forEach(function(a){
+      if(a.getAttribute('data-page')===target) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    });
+    var i = ids.indexOf(target);
+    $('pager').innerHTML = (i>0?'<a href="#'+ids[i-1]+'">← '+titles[ids[i-1]]+'</a>':'')+'<span class="spacer"></span>'+(i<ids.length-1?'<a href="#'+ids[i+1]+'">Next: '+titles[ids[i+1]]+' →</a>':'<a href="#overview">Back to overview ↑</a>');
+    if(scroll){ if(laneEl){ laneEl.scrollIntoView(); } else { window.scrollTo(0,0); } }
+  }
+  window.addEventListener('hashchange', function(){ show(true); });
+  show(false);
+}
+var raw = document.getElementById('tracker-data').textContent.trim();
+if (raw) { run(JSON.parse(raw)); }
+else {
+  fetch('data.json?v=' + Date.now(), {cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(run)
+    .catch(function(){ document.getElementById('strip-date').textContent = 'Could not load tracker data — refresh to try again'; });
+}
 })();
 </script>
 </body>

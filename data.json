@@ -1,0 +1,467 @@
+{
+  "lastVerified": "2026-09-15",
+  "congressEnds": "2027-01-03",
+  "bill": {
+    "number": "H.R. 10319",
+    "shortTitle": "Gender Delusion Disqualification Act",
+    "officialTitle": "To amend title 5, United States Code, to provide for requirements sensitive Government positions relating to gender dysphoria, and for other purposes.",
+    "congress": "119th Congress",
+    "sponsor": "Rep. Nancy Mace (R-SC-1)",
+    "introduced": "2026-09-08",
+    "committee": "House Oversight and Government Reform",
+    "cosponsors": [],
+    "senateCompanion": null,
+    "currentStage": 1,
+    "congressGovUpdated": "2026-09-14",
+    "posture": {
+      "level": "warn",
+      "label": "Monitor — no movement"
+    },
+    "actions": [
+      {
+        "date": "2026-09-08",
+        "text": "Introduced in House by Rep. Mace.",
+        "basis": "confirmed"
+      },
+      {
+        "date": "2026-09-08",
+        "text": "Referred to the House Committee on Oversight and Government Reform.",
+        "basis": "confirmed"
+      },
+      {
+        "date": "2026-09-08",
+        "text": "Sponsor press release issued; frames bill around “sensitive federal positions.” No cosponsors or Senate companion named.",
+        "basis": "confirmed"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Congress.gov",
+        "url": "https://www.congress.gov/bill/119th-congress/house-bill/10319"
+      },
+      {
+        "label": "GovInfo bill status XML",
+        "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr10319.xml"
+      },
+      {
+        "label": "Bill text (IH)",
+        "url": "https://www.govinfo.gov/app/details/BILLS-119hr10319ih"
+      },
+      {
+        "label": "Mace press release",
+        "url": "https://mace.house.gov/media/press-releases/rep-nancy-mace-introduces-bill-keep-gender-delusion-out-sensitive-federal"
+      }
+    ],
+    "postureNote": "No movement since the bill was sent to committee on Sept. 8."
+  },
+  "stages": [
+    {
+      "name": "Introduced",
+      "date": "2026-09-08"
+    },
+    {
+      "name": "In committee",
+      "date": "2026-09-08"
+    },
+    {
+      "name": "Hearing / markup",
+      "date": null
+    },
+    {
+      "name": "Passed House",
+      "date": null
+    },
+    {
+      "name": "Passed Senate",
+      "date": null
+    },
+    {
+      "name": "To President",
+      "date": null
+    },
+    {
+      "name": "Law",
+      "date": null
+    }
+  ],
+  "keyDates": [
+    {
+      "date": "2026-09-28",
+      "text": "EEOC federal-sector EEO rule — public comments due (Docket EEOC-2026-0067)",
+      "basis": "confirmed"
+    },
+    {
+      "date": "2026-09-30",
+      "text": "FY2026 ends — watch any stopgap or appropriations text for riders on federal fitness standards",
+      "basis": "read"
+    },
+    {
+      "date": "2026-11-03",
+      "text": "General election — House control for the 120th Congress decided",
+      "basis": "confirmed"
+    },
+    {
+      "date": "2026-11-15",
+      "approx": "Nov 2026",
+      "text": "Shilling v. United States trial scheduled (W.D. Wash.)",
+      "basis": "reported"
+    },
+    {
+      "date": "2027-01-03",
+      "text": "119th Congress ends — H.R. 10319 expires unless enacted; would need reintroduction",
+      "basis": "confirmed"
+    },
+    {
+      "date": "2027-01-04",
+      "text": "Talbott v. United States trial set to begin (D.D.C.)",
+      "basis": "reported"
+    }
+  ],
+  "triggers": [
+    {
+      "text": "First cosponsor added",
+      "why": "Signals caucus support beyond the sponsor.",
+      "hit": false
+    },
+    {
+      "text": "Senate companion introduced",
+      "why": "Required for any path to enactment.",
+      "hit": false
+    },
+    {
+      "text": "Hearing or markup noticed by House Oversight",
+      "why": "Most bills never reach this step; if it does, the comment/testimony window opens.",
+      "hit": false
+    },
+    {
+      "text": "Text attached to NDAA, appropriations, or another must-pass bill",
+      "why": "The realistic fast path in a short end-of-Congress window.",
+      "hit": false
+    },
+    {
+      "text": "An agency adopts a similar diagnosis-based bar by policy or rule",
+      "why": "Same outcome without legislation.",
+      "hit": false
+    },
+    {
+      "text": "Bill reintroduced in the 120th Congress (after Jan. 3, 2027)",
+      "why": "Resets the clock with a new bill number.",
+      "hit": false
+    }
+  ],
+  "lanes": [
+    {
+      "id": "eeoc-rule",
+      "title": "EEOC federal-sector EEO process rule",
+      "ids": "RIN 3046-AB46 · Docket EEOC-2026-0067 · 29 CFR Part 1614",
+      "level": "crit",
+      "status": "Comment window open",
+      "latest": "Proposed rule published Aug. 28, 2026 after a 2–1 Commission vote on Aug. 26. It would end mandatory pre-complaint counseling, make administrative judge hearings discretionary, and bar administrative class complaints. Comments close Sept. 28.",
+      "timeline": [
+        {
+          "date": "2026-01-22",
+          "text": "EEOC votes to rescind 2024 harassment enforcement guidance.",
+          "basis": "reported"
+        },
+        {
+          "date": "2026-02-26",
+          "text": "EEOC overturns Lusardi v. McHugh restroom-access precedent for federal employees.",
+          "basis": "reported"
+        },
+        {
+          "date": "2026-07-28",
+          "text": "AFGE and two federal employees sue EEOC over an internal freeze on processing federal-sector class complaints.",
+          "basis": "confirmed"
+        },
+        {
+          "date": "2026-08-26",
+          "text": "Commission votes 2–1 to advance the proposed rule.",
+          "basis": "confirmed"
+        },
+        {
+          "date": "2026-08-28",
+          "text": "Proposed rule published in the Federal Register; 30-day comment period.",
+          "basis": "confirmed"
+        }
+      ],
+      "next": [
+        "AFGE / WFP comment filed by Sept. 28",
+        "Comment volume and allied filings on the docket",
+        "Final rule and effective date",
+        "Ruling in AFGE's class-complaint freeze suit"
+      ],
+      "relevance": "This rule sets the process a federal employee uses to file a discrimination complaint against their agency, including a complaint about a job decision made under H.R. 10319 if it became law. The proposal would end administrative class complaints.",
+      "sources": [
+        {
+          "label": "Federal Register",
+          "url": "https://www.federalregister.gov/documents/2026/08/28/2026-17641/federal-sector-equal-employment-opportunity"
+        },
+        {
+          "label": "Comment on Regulations.gov",
+          "url": "https://www.regulations.gov/commenton/EEOC-2026-0067-0002"
+        },
+        {
+          "label": "AFGE on proposed rule",
+          "url": "https://www.afge.org/article/proposed-overhaul-of-federal-eeo-process-is-bad-for-workers-and-public"
+        },
+        {
+          "label": "AFGE v. EEOC suit",
+          "url": "https://www.afge.org/publication/afge-and-federal-employees-sue-eeoc-to-reverse-freeze-of-federalsector-class-claims/"
+        },
+        {
+          "label": "Lusardi reversal (Bloomberg Law)",
+          "url": "https://news.bloomberglaw.com/daily-labor-report/eeoc-overturns-bathroom-ruling-for-transgender-federal-workers"
+        },
+        {
+          "label": "Guidance rescission (Duane Morris)",
+          "url": "https://www.duanemorris.com/alerts/eeoc_votes_rescind_workplace_harassment_guidance_0126.html"
+        }
+      ],
+      "page": "workforce"
+    },
+    {
+      "id": "military-ban",
+      "title": "Military gender-dysphoria service ban litigation",
+      "ids": "EO 14183 (Jan. 27, 2025) · Talbott v. United States · Shilling v. United States",
+      "level": "warn",
+      "status": "Supreme Court petition pending",
+      "latest": "DOJ petitioned the Supreme Court on Aug. 28, 2026 to review Talbott before trial, after a divided D.C. Circuit panel in June kept currently serving transgender troops protected from discharge. The ban on new accessions remains in effect.",
+      "timeline": [
+        {
+          "date": "2025-03-18",
+          "text": "Talbott: Judge Ana Reyes (D.D.C.) issues nationwide preliminary injunction.",
+          "basis": "confirmed"
+        },
+        {
+          "date": "2025-05-06",
+          "text": "Shilling: Supreme Court stays that injunction, allowing the ban to take effect while litigation continues.",
+          "basis": "confirmed"
+        },
+        {
+          "date": "2025-10-20",
+          "text": "Shilling: Ninth Circuit hears oral argument; decision pending.",
+          "basis": "confirmed"
+        },
+        {
+          "date": "2026-06-01",
+          "text": "Talbott: divided D.C. Circuit panel blocks discharge of currently serving plaintiffs; allows restrictions on new recruits.",
+          "basis": "reported"
+        },
+        {
+          "date": "2026-06-30",
+          "text": "Talbott: district court certifies a class of transgender service members (reported July 2).",
+          "basis": "confirmed"
+        },
+        {
+          "date": "2026-08-28",
+          "text": "Talbott: DOJ files Supreme Court petition seeking review before trial.",
+          "basis": "reported"
+        }
+      ],
+      "next": [
+        "Supreme Court action on the Talbott petition",
+        "Ninth Circuit decision in Shilling",
+        "Shilling trial (Nov. 2026) and Talbott trial (Jan. 4, 2027)"
+      ],
+      "relevance": "The military policy uses the same approach as H.R. 10319: a gender dysphoria diagnosis as the basis for disqualification. These cases are testing whether that approach is lawful.",
+      "sources": [
+        {
+          "label": "GLAD Law — Talbott",
+          "url": "https://www.gladlaw.org/cases/talbott-v-usa/"
+        },
+        {
+          "label": "Lambda Legal — Shilling",
+          "url": "https://lambdalegal.org/case/shilling-v-trump/"
+        },
+        {
+          "label": "Stars and Stripes (Aug. 28)",
+          "url": "https://www.stripes.com/theaters/us/2026-08-28/trump-supreme-court-transgender-troops-22686847.html"
+        },
+        {
+          "label": "The Advocate",
+          "url": "https://www.advocate.com/politics/national/talbott-trans-military-supreme-court"
+        },
+        {
+          "label": "Military Times (class cert.)",
+          "url": "https://www.militarytimes.com/news/your-military/2026/07/02/transgender-troops-granted-class-action-lawsuit-against-government/"
+        }
+      ],
+      "page": "courts"
+    },
+    {
+      "id": "schedule-pc",
+      "title": "Schedule Policy/Career (formerly Schedule F)",
+      "ids": "OPM final rule (Feb. 6, 2026) · EO of June 3, 2026",
+      "level": "warn",
+      "status": "In effect; litigation ongoing",
+      "latest": "OPM finalized the rule Feb. 6, 2026, and a June 3 executive order moved positions into the new schedule. AFGE is a plaintiff in challenges; district-court injunctions have been stayed on appeal, so the policy remains in effect.",
+      "timeline": [
+        {
+          "date": "2025-01-20",
+          "text": "Schedule F revived by executive order; AFGE/AFSCME and NTEU file suits.",
+          "basis": "reported"
+        },
+        {
+          "date": "2026-02-06",
+          "text": "OPM publishes Schedule Policy/Career final rule.",
+          "basis": "reported"
+        },
+        {
+          "date": "2026-03-05",
+          "approx": "Early Mar. 2026",
+          "text": "Coalition suit (PEER, AFGE, AFSCME, AFL-CIO; Democracy Forward) challenges the order and final rule.",
+          "basis": "reported"
+        },
+        {
+          "date": "2026-06-03",
+          "text": "EO “Implementing Schedule Policy/Career in the Excepted Service” moves positions into the schedule.",
+          "basis": "reported"
+        }
+      ],
+      "next": [
+        "Appellate merits ruling in any challenge",
+        "Further agency position conversions",
+        "Whether covered safety/security positions are reclassified"
+      ],
+      "relevance": "Employees moved into Schedule Policy/Career lose the adverse-action appeal rights that normally apply when an agency removes a career employee. Estimates of positions affected vary by source (about 8,000 under the June order; up to 50,000 overall).",
+      "sources": [
+        {
+          "label": "CRS Legal Sidebar LSB11412",
+          "url": "https://www.congress.gov/crs-product/LSB11412"
+        },
+        {
+          "label": "Federal News Network (Mar.)",
+          "url": "https://federalnewsnetwork.com/litigation/2026/03/lawsuit-contends-schedule-policy-career-exceeds-presidential-authority/"
+        },
+        {
+          "label": "FedSmith (June 3 order)",
+          "url": "https://www.fedsmith.com/2026/06/03/what-the-new-schedule-policy-career-order-means-for-federal-employees/"
+        },
+        {
+          "label": "AFGE lawsuit summary",
+          "url": "https://www.afge.org/article/summary-of-afge-lawsuits-against-trump--how-litigation-works-2/"
+        }
+      ],
+      "page": "workforce"
+    },
+    {
+      "id": "related",
+      "title": "Related bills and executive orders",
+      "ids": "EO 14168 · EO 14183 · 119th Congress bills",
+      "level": "quiet",
+      "status": "No new related bill found",
+      "latest": "Congress.gov lists no related bills for H.R. 10319. No other 119th Congress bill applying a diagnosis-based bar to civilian federal positions was found in the Sept. 15 search.",
+      "timeline": [
+        {
+          "date": "2025-01-20",
+          "text": "EO 14168 (“Defending Women from Gender Ideology Extremism…”) — basis EEOC cited for restricting facility access.",
+          "basis": "confirmed"
+        },
+        {
+          "date": "2025-01-27",
+          "text": "EO 14183 (“Prioritizing Military Excellence and Readiness”) — military service ban.",
+          "basis": "confirmed"
+        }
+      ],
+      "next": [
+        "New bills touching federal fitness-for-duty, medical-record access, or security-clearance standards",
+        "Riders in FY2027 appropriations or NDAA conference text",
+        "OPM or agency guidance on medical standards for covered positions"
+      ],
+      "relevance": "Tracks whether the same policy shows up in another bill, a spending bill, or an agency rule.",
+      "sources": [
+        {
+          "label": "Congress.gov search",
+          "url": "https://www.congress.gov/search"
+        }
+      ],
+      "page": "bill"
+    }
+  ],
+  "voices": [
+    {
+      "org": "AFGE",
+      "bill": "No statement located",
+      "eeoc": "Opposes; says cases will take longer at greater cost",
+      "lit": "Plaintiff: EEOC class-freeze suit; Schedule P/C suits"
+    },
+    {
+      "org": "NTEU",
+      "bill": "No statement located",
+      "eeoc": "Not yet checked",
+      "lit": "Plaintiff: Schedule F / P/C suit"
+    },
+    {
+      "org": "NFFE / NAGE",
+      "bill": "No statement located",
+      "eeoc": "Not yet checked",
+      "lit": "—"
+    },
+    {
+      "org": "GLAD Law / NCLR",
+      "bill": "No statement located",
+      "eeoc": "Not yet checked",
+      "lit": "Counsel: Talbott v. United States"
+    },
+    {
+      "org": "Lambda Legal / HRC",
+      "bill": "No statement located",
+      "eeoc": "Not yet checked",
+      "lit": "Counsel: Shilling v. United States"
+    }
+  ],
+  "openQuestions": [
+    "What triggers agency knowledge of a diagnosis, and does that inquiry comply with Rehabilitation Act limits?",
+    "For a current employee: removal, reassignment, or something else — and what appeal rights apply?",
+    "Is there any path to show the diagnosis doesn't affect job performance, or is it a strict bar?",
+    "Which positions and certifications government-wide already carry a mental-health standard, and at how many agencies?",
+    "Would AFGE have a formal consultation role in the 180-day agency rulemaking?"
+  ],
+  "changeLog": [
+    {
+      "date": "2026-09-15",
+      "text": "Tracker created. Baseline verified against Congress.gov (data updated Sept. 14), Federal Register, and case counsel pages. No bill movement since referral."
+    },
+    {
+      "date": "2026-09-15",
+      "text": "Site reorganized into five pages with a plain-language overview; “Why it matters” notes rewritten as factual “How it connects” notes."
+    }
+  ],
+  "overview": {
+    "plain": [
+      {
+        "label": "What it does",
+        "text": "If a federal job or license already requires passing a mental-health fitness standard, a gender dysphoria diagnosis would automatically disqualify the person — no matter how well they do the job."
+      },
+      {
+        "label": "Who it reaches",
+        "text": "People diagnosed with gender dysphoria who hold or want those jobs or licenses. The wording could reach current employees, not just applicants. It is not a rule for every federal worker."
+      },
+      {
+        "label": "Where it stands",
+        "text": "Introduced Sept. 8, 2026 and sent to the House Oversight Committee. No cosponsors and no hearing. It is not law."
+      },
+      {
+        "label": "If it passed",
+        "text": "Each agency would have 180 days to write the rules for how it works. The bill doesn't say how agencies would learn of a diagnosis or what happens to current employees."
+      }
+    ],
+    "watchTop": [
+      {
+        "title": "EEOC comment deadline",
+        "text": "Public comments on the EEOC's rewrite of the federal complaint process are due Sept. 28.",
+        "page": "workforce"
+      },
+      {
+        "title": "Any movement on the bill",
+        "text": "A cosponsor, a Senate version, or a committee hearing would mean the bill is gaining ground.",
+        "page": "bill"
+      },
+      {
+        "title": "Supreme Court and the military ban",
+        "text": "The Justice Department has asked the Supreme Court to take up the Talbott case before trial.",
+        "page": "courts"
+      }
+    ]
+  }
+}
